@@ -1,0 +1,11 @@
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\bin\Debug\TicTacToeAlphaBeta.exe.config
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\bin\Debug\TicTacToeAlphaBeta.exe
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\bin\Debug\TicTacToeAlphaBeta.pdb
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.csproj.AssemblyReference.cache
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.csproj.SuggestedBindingRedirects.cache
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToe.FrmTicTacToe.resources
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.Properties.Resources.resources
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.csproj.GenerateResource.cache
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.csproj.CoreCompileInputs.cache
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.exe
+C:\Estudos\TrabalhoFinal\TicTacToeAlphaBeta\TicTacToeAlphaBeta\obj\Debug\TicTacToeAlphaBeta.pdb
