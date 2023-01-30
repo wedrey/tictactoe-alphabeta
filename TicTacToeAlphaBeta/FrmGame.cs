@@ -130,7 +130,7 @@ namespace TicTacToe
                 
                 MessageBox.Show(msg, "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
-            else if (!TTTGame.IsMovesLeft(board))
+            else if (!TTTGame.MovementToPplay(board))
                 MessageBox.Show("Não houve ganhador!", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 
 

@@ -14,12 +14,12 @@ namespace TicTacToe.Lib
          */
         private static bool IsNotMarked(char v)
         {
-            return (v != 'X' && v != 'O');
+            return (v != ai && v != opponent);
         }
 
         //returns true if there are moves
         //returns false if there are no moves to play
-        public static bool IsMovesLeft(char[,] board)
+        public static bool MovementToPplay(char[,] board)
         {
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++)
@@ -83,7 +83,7 @@ namespace TicTacToe.Lib
 
             // If there are no more moves and
             // no winner then it is a tie
-            if (IsMovesLeft(gameBoard) == false)
+            if (MovementToPplay(gameBoard) == false)
                 return 0;
 
             int score = Utility(gameBoard);
@@ -117,18 +117,29 @@ namespace TicTacToe.Lib
                             // Make the move
                             gameBoard[i, j] = ai;
 
+                            #region print
+                            //printBoard(gameBoard, isMaximizer);
+                            #endregion
                             //choose the maximum value
-                            bestScore = Math.Max(bestScore, MiniMax(gameBoard, depth -1, alpha, beta, !isMaximizer));
+                            bestScore = Math.Max(bestScore, MiniMax(gameBoard, depth -1, alpha, beta, false));
 
+                            #region print
+                            /*if (bestScore >= -1)
+                                Console.WriteLine("bestScore: " + bestScore);*/
+                            #endregion
                             alpha = Math.Max(alpha, bestScore);
 
                             // Undo the move
                             gameBoard[i, j] = '-';
 
                             if (alpha >= beta)
+                            {
+                                #region print
+                                //Console.WriteLine("Poda |  alpha" + alpha + ">= beta" + beta);
+                                #endregion
                                 return bestScore;
-
-                          
+                            }
+                                
                         }
                     }
                 }
@@ -147,9 +158,17 @@ namespace TicTacToe.Lib
                         {
                             // Make the move
                             gameBoard[i, j] = opponent;
-
+                            #region print
+                            //printBoard(gameBoard, isMaximizer);
+                            #endregion
                             //choose the minimum value
-                            bestScore = Math.Min(bestScore, MiniMax(gameBoard, depth - 1, alpha, beta, !isMaximizer));
+                            bestScore = Math.Min(bestScore, MiniMax(gameBoard, depth - 1, alpha, beta, true));
+
+                            #region print
+                            /*if (bestScore >= -1)
+                                Console.WriteLine("bestScore: " + bestScore);
+                            */
+                            #endregion
 
                             beta = Math.Min(beta, bestScore);
 
@@ -157,9 +176,13 @@ namespace TicTacToe.Lib
                             gameBoard[i, j] = '-';
 
                             if (beta <= alpha)
+                            {
+                                #region print
+                                //Console.WriteLine("Poda | beta" + beta + " <= alpha" + alpha);
+                                #endregion
                                 return bestScore;
-
-                           
+                            }
+                                
                         }
                     }
                 }
@@ -168,6 +191,23 @@ namespace TicTacToe.Lib
             }
         }
 
+        #region print
+        private static void printBoard(char[,] gameBoard, bool isMaximizer)
+        {
+            if (isMaximizer)
+                Console.WriteLine("\nMax");
+            else
+                Console.WriteLine("\nMin");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(gameBoard[i,j] + "|");
+                }
+                Console.WriteLine("");
+            }
+        }
+        #endregion
         public static Move FindTheBestMove(char[,] gameBoard)
         {
             Move theBestMove = new Move();
@@ -187,6 +227,7 @@ namespace TicTacToe.Lib
 
                         //evaluation function
                         int valTmp = MiniMax(gameBoard, MAX_DEPTH, int.MinValue, int.MaxValue, false);
+                        //printBoard(gameBoard);
 
                         // Undo the move
                         gameBoard[i, j] = '-';
