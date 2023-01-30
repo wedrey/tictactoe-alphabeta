@@ -10,7 +10,9 @@ namespace TicTacToeAlphaBeta
 				   { '-', '-', '-' },
 				   { '-', '-', '-' },
 				   { '-', '-', '-' }};
-			Move bestMove = TTTGame.FindTheBestMove(board);
+
+            TTTGame.setDebug(true);
+            Move bestMove = TTTGame.FindTheBestMove(board);
 		}
     }
 }

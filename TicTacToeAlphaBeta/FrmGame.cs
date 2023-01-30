@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TicTacToe.Lib;
+using TicTacToeAlphaBeta;
 
 namespace TicTacToe
 {
@@ -28,7 +29,7 @@ namespace TicTacToe
         public FrmTicTacToe()
         {
             InitializeComponent();
-
+            TTTGame.setDebug(false);
             SetStartRandom();
             
         }

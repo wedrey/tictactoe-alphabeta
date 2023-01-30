@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TicTacToeAlphaBeta;
 
@@ -15,6 +12,7 @@ namespace TicTacToe
         [STAThread]
         static void Main()
         {
+            //true if test algorith in console
             bool test = false;
 
             if (!test)
