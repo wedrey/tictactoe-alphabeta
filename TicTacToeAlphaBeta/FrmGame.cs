@@ -70,7 +70,7 @@ namespace TicTacToe
 
         }
 
-        private void SairDoSistema()
+        private void ExitSystem()
         {
             DialogResult dialogResult = MessageBox.Show("Confirma Sair do Jogo?", "Sair do Jogo", MessageBoxButtons.YesNo);
             if (dialogResult != DialogResult.No)
@@ -89,10 +89,13 @@ namespace TicTacToe
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            SairDoSistema();
+            ExitSystem();
         }
 
-        private void SetMarkPlayedToForm()
+        /// <summary>
+        /// Sync board and form
+        /// </summary>
+        private void SyncBoardAndForm()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -109,7 +112,7 @@ namespace TicTacToe
             }
         }
 
-        private void MarkAI(Move bestMove)
+        private void PlayAI(Move bestMove)
         {
             if (bestMove.row >= 0 && bestMove.col >= 0)
             {
@@ -117,7 +120,8 @@ namespace TicTacToe
                 Controls.Find("btn" + bestMove.row + "" + bestMove.col, true).FirstOrDefault().Enabled = false;
             }
 
-            SetMarkPlayedToForm();
+            //to force form refresh
+            SyncBoardAndForm();
 
             int r = TTTGame.Utility(board);
         
@@ -136,8 +140,11 @@ namespace TicTacToe
 
 
         }
-
-        private void MarkMarkOpponentAI(string iBtn)
+        /// <summary>
+        /// marks the opponent's action on the form
+        /// </summary>
+        /// <param name="iBtn"></param>
+        private void PlaykOpponent(string iBtn)
         {
             Controls.Find("btn"+ iBtn, true).FirstOrDefault().Text = opponent.ToString();
             Controls.Find("btn" + iBtn, true).FirstOrDefault().Enabled = false;
@@ -145,74 +152,74 @@ namespace TicTacToe
 
         private void btn00_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("00");
-            SetMarkPlayedToForm();
+            PlaykOpponent("00");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn01_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("01");
-            SetMarkPlayedToForm();
+            PlaykOpponent("01");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn02_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("02");
-            SetMarkPlayedToForm();
+            PlaykOpponent("02");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn10_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("10");
-            SetMarkPlayedToForm();
+            PlaykOpponent("10");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn11_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("11");
-            SetMarkPlayedToForm();
+            PlaykOpponent("11");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn12_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("12");
-            SetMarkPlayedToForm();
+            PlaykOpponent("12");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn20_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("20");
-            SetMarkPlayedToForm();
+            PlaykOpponent("20");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn21_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("21");
-            SetMarkPlayedToForm();
+            PlaykOpponent("21");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
         private void btn22_Click_1(object sender, EventArgs e)
         {
-            MarkMarkOpponentAI("22");
-            SetMarkPlayedToForm();
+            PlaykOpponent("22");
+            SyncBoardAndForm();
             Move bestMove = TTTGame.FindTheBestMove(board);
-            MarkAI(bestMove);
+            PlayAI(bestMove);
         }
 
     }

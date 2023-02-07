@@ -6,10 +6,18 @@ namespace TicTacToeAlphaBeta
     {
         public static void TheBestMove()
         {
-			char[,] board = {
-				   { '-', '-', '-' },
-				   { '-', '-', '-' },
-				   { '-', '-', '-' }};
+            /*
+            char[,] board = {
+                   { 'X', '-', '-' },
+                   { 'X', 'O', '-' },
+                   { 'O', 'X', 'O' }};
+            */
+
+            //slide example
+            char[,] board = {
+                   { 'O', 'X', '-' },
+                   { 'X', '-', '-' },
+                   { 'X', 'O', 'O' }};
 
             TTTGame.setDebug(true);
             Move bestMove = TTTGame.FindTheBestMove(board);

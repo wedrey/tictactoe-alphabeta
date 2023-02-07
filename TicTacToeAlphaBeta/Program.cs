@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TicTacToe.Lib;
 using TicTacToeAlphaBeta;
 
 namespace TicTacToe
@@ -13,7 +14,7 @@ namespace TicTacToe
         static void Main()
         {
             //true if test algorith in console
-            bool test = false;
+            bool test = true;
 
             if (!test)
             {
