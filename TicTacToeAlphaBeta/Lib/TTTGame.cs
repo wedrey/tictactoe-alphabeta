@@ -142,11 +142,11 @@ namespace TicTacToe.Lib
                             // Undo the move
                             gameBoard[i, j] = '-';
 
-                            if (alpha >= beta)
+                            if (beta<= alpha)
                             {
                                 #region debug print
                                 if (debug)
-                                    Console.WriteLine("Poda |  alpha: " + alpha + " >= beta" + beta);
+                                    Console.WriteLine("Poda |  alpha: " + alpha + " <= beta" );
                                 #endregion
                                 return bestScore;
                             }
